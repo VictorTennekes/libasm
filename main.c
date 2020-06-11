@@ -212,12 +212,12 @@ int		main(void)
 	test_ft_strcpy();
 	test_ft_strcmp();
 	test_ft_strdup();
-	// test_ft_list_push_front();
-	// test_ft_list_size();
+	test_ft_list_push_front();
+	test_ft_list_size();
 	// test_ft_strchr();
 	// test_ft_atoi_base();
 	// test_ft_itoa_base();
 	// test_ft_list_sort();
-	// test_ft_list_remove_if();
+	test_ft_list_remove_if();
 	return (0);
 }
