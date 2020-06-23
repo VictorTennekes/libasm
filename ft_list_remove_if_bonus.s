@@ -1,12 +1,12 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         ::::::::             ;
-;    ft_list_delete_if_bonus.s                          :+:    :+:             ;
+;    ft_list_remove_if_bonus.s                          :+:    :+:             ;
 ;                                                      +:+                     ;
 ;    By: vtenneke <vtenneke@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
-;    Created: 2020/06/11 15:13:30 by vtenneke      #+#    #+#                  ;
-;    Updated: 2020/06/11 15:13:30 by vtenneke      ########   odam.nl          ;
+;    Created: 2020/06/16 10:07:06 by vtenneke      #+#    #+#                  ;
+;    Updated: 2020/06/16 10:07:06 by vtenneke      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
