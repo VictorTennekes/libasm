@@ -20,7 +20,8 @@ SRC		=	ft_strlen.s\
 			ft_strdup.s\
 			ft_list_size_bonus.s\
 			ft_list_push_front_bonus.s\
-			ft_list_delete_if_bonus.s
+			ft_list_delete_if_bonus.s\
+			ft_list_sort_bonus.s
 OBJ		=	$(SRC:%.s=%.o)
 SFLAGS	=	-fmacho64	
 

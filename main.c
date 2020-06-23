@@ -155,10 +155,10 @@ static void	test_ft_list_sort(void)
 	size_t	size;
 
 	head = NULL;
-	ft_list_push_front(&head, "0");
+	ft_list_push_front(&head, "4");
 	ft_list_push_front(&head, "22");
 	ft_list_push_front(&head, "444");
-	ft_list_push_front(&head, "4");
+	ft_list_push_front(&head, "0");
 	printf("LIST_SORT\n");
 	size = ft_list_size(head);
 	printf("before:\n");
@@ -217,7 +217,7 @@ int		main(void)
 	// test_ft_strchr();
 	// test_ft_atoi_base();
 	// test_ft_itoa_base();
-	// test_ft_list_sort();
+	test_ft_list_sort();
 	test_ft_list_remove_if();
 	return (0);
 }
