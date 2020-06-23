@@ -155,10 +155,15 @@ static void	test_ft_list_sort(void)
 	size_t	size;
 
 	head = NULL;
-	ft_list_push_front(&head, "4");
-	ft_list_push_front(&head, "22");
-	ft_list_push_front(&head, "444");
-	ft_list_push_front(&head, "0");
+	ft_list_push_front(&head, "1");
+	ft_list_push_front(&head, "12");
+	ft_list_push_front(&head, "123");
+	ft_list_push_front(&head, "1234");
+	ft_list_push_front(&head, "12345");
+	ft_list_push_front(&head, "123456");
+	ft_list_push_front(&head, "1234567");
+	ft_list_push_front(&head, "12345678");
+	ft_list_push_front(&head, "123456789");
 	printf("LIST_SORT\n");
 	size = ft_list_size(head);
 	printf("before:\n");
@@ -168,6 +173,37 @@ static void	test_ft_list_sort(void)
 	ft_list_print(head);
 	printf("\n");
 }
+
+static int		int_cmp(char *a, char *b)
+{
+	return (atoi(a) > atoi(b) ? 1 : 0);
+}
+
+static void	test_ft_list_sort_int(void)
+{
+	t_list	*head;
+	size_t	size;
+
+	head = NULL;
+	ft_list_push_front(&head, "4");
+    ft_list_push_front(&head, "800");
+    ft_list_push_front(&head, "3");
+    ft_list_push_front(&head, "4");
+    ft_list_push_front(&head, "50");
+    ft_list_push_front(&head, "64");
+    ft_list_push_front(&head, "0");
+    ft_list_push_front(&head, "22");
+    ft_list_push_front(&head, "444");
+	printf("LIST_SORT INT\n");
+	printf("before:\n");
+	ft_list_print(head);
+	ft_list_sort(&head, &int_cmp);
+	// perror("IM HERE BITCH");
+	printf("after:\n");
+	ft_list_print(head);
+	printf("\n");
+}
+
 
 static void	test_ft_itoa_base(void)
 {
@@ -218,6 +254,7 @@ int		main(void)
 	// test_ft_atoi_base();
 	// test_ft_itoa_base();
 	test_ft_list_sort();
+	test_ft_list_sort_int();
 	test_ft_list_remove_if();
 	return (0);
 }

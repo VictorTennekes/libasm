@@ -29,43 +29,43 @@ _ft_list_sort:
     push r15
     push rbx
     cmp rdi, 0
-    jz ret
+    je ret
     cmp rsi, 0
-    jz ret
+    je ret
     mov HEAD, rdi
     mov FUNC, rsi
-	mov SWAPPED, 1
+    mov SWAPPED, 1
 
 outer_loop:
-	cmp SWAPPED, 0
-	jz ret
-	mov SWAPPED, 0
-	mov NODE, [HEAD]
-	mov NEXT, [NODE + 8]
-	cmp NEXT, 0
-	jz ret
-inner_loop:
-	mov rdi, [NODE]
-	mov rsi, [NEXT]
-	call FUNC
-	cmp rax, 0
-	jb swap
-resume:
-	mov NODE, NEXT
-	mov NEXT, [NODE + 8]
-	cmp NEXT, 0
-	jnz inner_loop
-	jmp outer_loop
+    cmp SWAPPED, 0
+    je ret
+    mov SWAPPED, 0
+    mov NODE, [HEAD]
+    mov NEXT, [NODE + 8]
+    cmp NEXT, 0
+    je ret
 
+inner_loop:
+    mov rdi, [NODE]
+    mov rsi, [NEXT]
+    call FUNC
+    cmp rax, 0
+    jg swap
+
+resume:
+    mov NODE, NEXT
+    mov NEXT, [NODE + 8]
+    cmp NEXT, 0
+    jne inner_loop
+    jmp outer_loop
 
 swap:
-	mov rdi, [NODE]
-	mov rsi, [NEXT]
-	mov [NEXT], rsi
-	mov [NODE], rdi
-	mov SWAPPED, 1
+    mov rdi, [NODE]
+    mov rsi, [NEXT]
+    mov [NEXT], rdi
+    mov [NODE], rsi
+    mov SWAPPED, 1
     jmp resume
-
 
 ret:
     pop rbx
