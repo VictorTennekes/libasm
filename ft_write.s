@@ -14,13 +14,19 @@
 
 section.text:
 	global _ft_write
-
-error:
-	mov rax, -1			; setting the rax register to -1 for error handling
-	ret					; return
+	extern ___error
 
 _ft_write:
 	mov rax, 0x2000004	; move the systemcall code for write into rax
 	syscall				; systemcall
 	jc error			; if carry jump error
+	ret					; return
+
+error:
+	push rax
+	call ___error
+	mov	rdi, rax
+	pop	rax
+	mov	[rdi], rax
+	mov rax, -1			; setting the rax register to -1 for error handling
 	ret					; return

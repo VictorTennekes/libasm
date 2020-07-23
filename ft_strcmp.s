@@ -19,7 +19,7 @@ _ft_strcmp:
 	mov rax, 0				; setting return register to 0
 
 loop:
-	mov r8b, [rdi + rax]	; moving byte with index rax from s1 to r8b register
+	mov	r8b, [rdi + rax]	; moving byte with index rax from s1 to r8b register
 	mov r9b, [rsi + rax]	; moving byte with index rax from s2 to r9b register
 	inc rax					; incrementing rax
 	cmp r8b, r9b			; comparing the byte in r8b to the byte in r9b

@@ -14,6 +14,7 @@
 
 section.text:
 	global _ft_read
+	extern ___error	
 
 _ft_read:
 	mov rax, 0x2000003	; move the systemcall code for read into rax
@@ -22,5 +23,10 @@ _ft_read:
 	ret					; return
 
 error:
+	push rax
+	call ___error
+	mov	rdi, rax
+	pop	rax
+	mov	[rdi], rax
 	mov rax, -1			; setting the rax register to -1 for error handling
 	ret					; return
